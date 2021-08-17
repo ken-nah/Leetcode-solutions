@@ -1,0 +1,22 @@
+/*
+ * @lc app=leetcode id=26 lang=javascript
+ *
+ * [26] Remove Duplicates from Sorted Array
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function (nums) {
+  let pointer = 0;
+  for (let j = 1; j < nums.length; j++) {
+    if (nums[j] !== nums[pointer]) {
+      pointer++;
+      nums[pointer] = nums[j];
+    }
+  }
+  return pointer + 1;
+};
+// @lc code=end
